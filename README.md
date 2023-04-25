@@ -1,8 +1,8 @@
-# Auto-GPT Allow Unzipped Plugins (Beta) - a dev plugin for Auto-GPT
+# Auto-GPT Allow Unzipped Plugins (Beta) - a dev plugin
 
 ## Overview
 
-This tool enables faster, on-the-fly plugin testing by allowing unzipped plugins to work. 
+This utility enables faster, on-the-fly plugin testing by allowing unzipped plugins to work. 
 
 Auto-GPT requires zipped plugins for great security reasons. For developers, zipping up plugins during the dev/test cycle slows things down. 
 
@@ -45,11 +45,10 @@ ALLOWLISTED_PLUGINS=AutoGPTAllowUnzippedPlugins
 
 Once installed, this plugin should allow Auto-GPT to call plugins in the ./plugin directory that are not zipped up.
 
-Note: The plugins will not show up in Auto-GPT's plugin list, but plugin methods will be called.
-
 ## Limitations
 
-Currently, the plugin does not support the following methods.
+1. The plugins will not show up in Auto-GPT's plugin list, but plugin methods will be called.
+2. Currently, the plugin does not support the following methods.
 - chat_completion
 - on_planning
 
