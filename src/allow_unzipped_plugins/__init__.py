@@ -13,15 +13,6 @@ class Message(TypedDict):
     role: str
     content: str
 
-
-def instantiate_plugin_class(module_path, class_name):
-    module = importlib.import_module(module_path)
-    plugin_class = getattr(module, class_name)
-    print(f"Module: {module} Plugin class: {plugin_class}")
-    instance = plugin_class()
-    return instance
-
-
 class AutoGPTAllowUnzippedPlugins(AutoGPTPluginTemplate):
     """
     This plugin allows developers to use unzipped plugins simplifying the plugin development process.
