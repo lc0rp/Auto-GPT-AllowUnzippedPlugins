@@ -1,5 +1,4 @@
-# Auto-GPT Allow Unzipped Plugins (Beta) - a dev plugin
-
+# Auto-GPT Allow Unzipped Plugins (Beta) - a dev utility.
 ## Overview
 
 This utility enables faster, on-the-fly plugin testing by allowing unzipped plugins to work. 
