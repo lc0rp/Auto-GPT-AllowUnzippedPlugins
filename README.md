@@ -42,7 +42,8 @@ ALLOWLISTED_PLUGINS=AutoGPTAllowUnzippedPlugins
 
 ## Usage
 
-Once installed, this plugin should allow Auto-GPT to call plugins in the ./plugin directory that are not zipped up.
+1. Once installed, this plugin should allow Auto-GPT to call any plugin in the "Auto-GPT/plugins/" directory even if they're not zipped up.
+2. Place your plugins in the "Auto-GPT/plugins/" folder, as you normally would, except that you do not have to zip them up.
 
 ## Limitations
 
