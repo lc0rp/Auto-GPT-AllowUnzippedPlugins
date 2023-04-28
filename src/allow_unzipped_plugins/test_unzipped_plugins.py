@@ -60,7 +60,7 @@ def test_install_plugin_requirements():
         PluginManager.install_plugin_requirements(Path("./plugins"))
 
         expected_calls = [
-            call([sys.executable, "-m", "pip", "install", "-r", path])
+            call([sys.executable, "-m", "pip", "install", "-r", str(path)])
             for path in mock_rglob.return_value
         ]
         mock_subprocess_check_call.assert_has_calls(expected_calls, any_order=True)
