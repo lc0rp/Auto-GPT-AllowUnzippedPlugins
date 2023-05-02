@@ -136,10 +136,48 @@ class AutoGPTAllowUnzippedPlugins(AutoGPTPluginTemplate):
     def can_handle_chat_completion(
         self, messages: Dict[Any, Any], model: str, temperature: float, max_tokens: int
     ) -> bool:
-        """Not supported by this plugin."""
+        """Not yet supported by this plugin."""
         return False
 
     def handle_chat_completion(
         self, messages: List[Message], model: str, temperature: float, max_tokens: int
     ) -> str:
         pass
+
+    def can_handle_text_embedding(self, text: str) -> bool:
+        """Not yet supported by this plugin"""
+        return False
+
+    def handle_text_embedding(self, text: str) -> list:
+        pass
+
+    def can_handle_user_input(self, user_input: str) -> bool:
+        return any(
+            hasattr(plugin, "can_handle_user_input")
+            and plugin.can_handle_user_input(user_input=user_input)
+            for plugin in self._plugins
+        )
+
+    def user_input(self, user_input: str) -> str:
+        for plugin in self._plugins:
+            if not hasattr(plugin, "can_handle_user_input"):
+                continue
+            if not plugin.can_handle_user_input(user_input=user_input):
+                continue
+            plugin_response = plugin.user_input(user_input=user_input)
+            if not plugin_response:
+                continue
+            else:
+                return plugin_response
+        return None
+
+    def can_handle_report(self) -> bool:
+        return self._can_handle("report")
+
+    def report(self, message: str) -> None:
+        for plugin in self._plugins:
+            if not hasattr(plugin, "can_handle_report"):
+                continue
+            if not plugin.can_handle_report():
+                continue
+            plugin.report(message)
