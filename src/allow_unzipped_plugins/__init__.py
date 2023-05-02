@@ -20,7 +20,7 @@ class AutoGPTAllowUnzippedPlugins(AutoGPTPluginTemplate):
     def __init__(self):
         super().__init__()
         self._name = "Auto-GPT-Allow-Unzipped-Plugins"
-        self._version = "0.1.4"
+        self._version = "0.2.0"
         self._description = "This plugin allows developers to use unzipped plugins simplifying the plugin development process."
 
         from autogpt.config.config import Config
