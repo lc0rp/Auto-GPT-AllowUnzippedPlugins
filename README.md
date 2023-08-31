@@ -1,4 +1,9 @@
 # Auto-GPT Allow Unzipped Plugins (Beta) - a dev utility.
+
+## Archived (Aug 31 2023)
+
+Recent versions of Auto-GPT now support unzipped plugins, making this utility unnecessary.
+
 ## Overview
 
 This utility enables faster, on-the-fly plugin testing by allowing unzipped plugins to work. 
